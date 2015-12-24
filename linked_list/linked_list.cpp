@@ -22,7 +22,7 @@ int main()
     while(true)
     {
         cout<<"Enter one of following operations: "<<endl;
-        cout<<"1 to delete element at beginning\n";
+        cout<<"1 to insert element at beginning\n";
         cout<<"2 to insert element at end\n";
         cout<<"3 to insert after given node\n";
         cout<<"4 to delete element at beginning\n";
@@ -146,6 +146,10 @@ void insert_after_given_node(int n,int loc)
 void delete_at_begin()
 {
     node *ptr = head;
+    if(ptr==NULL){ 
+        cout<<"List is empty\n";
+        return;
+    }
     node *temp2 = ptr->next;
     delete ptr;
     head = temp2;
@@ -154,6 +158,7 @@ void delete_at_begin()
 void delete_at_end()
 {
     node *ptr = head;
+    if(ptr==NULL){ cout<<"List is empty\n"; return;}
     node *temp = NULL;
     while(ptr->next != NULL)
     {
@@ -167,6 +172,7 @@ void delete_after_given_node(int n)
 {
     int c = 0;
     node *ptr = head;
+    if(ptr==NULL){ cout<<"List is empty\n"; return;}
     node *temp = NULL;
     while(ptr->next !=NULL)
     {
